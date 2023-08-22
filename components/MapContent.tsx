@@ -1,5 +1,7 @@
-import { IHeadingAndTitle} from '../_lib/types';
+import {IHeadingAndTitle} from '../_lib/types';
+import BotSection from './botSection/BotSection';
 import HeadingAndTitle from './headingandTitle/HeadingAndTitle';
+
 
 type IMapContentProps = {
   content:IHeadingAndTitle[];
@@ -12,6 +14,20 @@ const MapContent = ({ content }: IMapContentProps) => {
         switch (item._type) {
           case 'headingAndTitle':
             return <HeadingAndTitle key={item._key} {...item} />
+          case 'bot':
+            return <BotSection tenantId={''} instanceId={''} subscriptionKey={''} debug={false} autoScroll={false} image={{
+              _key: '',
+              _id: '',
+              url: undefined,
+              _type: '',
+              asset: {
+                url: function (url: any): unknown {
+                  throw new Error('Function not implemented.');
+                },
+                _ref: '',
+                _type: ''
+              }
+            }} key={item._key} {...item} />
           default:
             break;
         }

@@ -7,13 +7,14 @@ import { apiVersion, dataset, projectId } from './sanity/env';
 import { schema } from './sanity/Schemas/schema';
 import { structure } from './sanity/Schemas/types/structure';
 import { media } from 'sanity-plugin-media';
+import { codeInput } from '@sanity/code-input';
 
 export default defineConfig({
   basePath: '/studio',
   projectId,
   dataset,
   schema,
-  plugins: [deskTool({ structure }), colorInput(), visionTool({ defaultApiVersion: apiVersion }), media()
+  plugins: [deskTool({ structure }), colorInput(), visionTool({ defaultApiVersion: apiVersion }), media(), codeInput()
 ],
   theme: myTheme,
 });

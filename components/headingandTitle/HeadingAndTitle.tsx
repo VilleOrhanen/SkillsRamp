@@ -1,5 +1,6 @@
 import React from 'react';
 import { IHeadingAndTitle } from '../../_lib/types';
+import botSection from 'components/botSection/BotSection';
 
 const HeadingAndTitle = (props: IHeadingAndTitle) => {
   const { heading } = props;

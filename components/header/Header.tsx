@@ -60,7 +60,6 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
             </div>
           </div>
         </div>
-
         <div
           className="nav-overlay absolute z-40 h-full w-full"
           style={{
@@ -90,8 +89,6 @@ const Header = (props: IMenuProps & { settings: ISiteSettings }) => {
 
   return (
     <>
-      {renderDesktopNav()}
-      {renderMobileNav()}
     </>
   );
 };

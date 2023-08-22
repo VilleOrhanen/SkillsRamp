@@ -20,6 +20,7 @@ export type IPage = {
   name: string;
   menuOrder?: number;
   content?: IHeadingAndTitle[];
+  CustomCSS?: object;
 };
 
 export type ISanityImage = {
@@ -43,4 +44,18 @@ export type IHeadingAndTitle = {
 
 export type ISlug = {
   current: string;
+};
+
+export type IBot = {
+  _ref?: string;
+  _type?: string;
+  _key?: string;
+  tenantId: string;
+  instanceId: string;
+  subscriptionKey: string;
+  debug: boolean;
+  autoScroll: boolean;
+  heading?: string;
+  description?: string;
+  image: ISanityImage;
 };

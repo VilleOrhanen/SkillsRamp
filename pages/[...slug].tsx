@@ -5,6 +5,7 @@ import { client } from '../_lib/client';
 import { IHeadingAndTitle, ISiteSettings } from '../_lib/types';
 import Header, { IMenuItem } from '../components/header/Header';
 import MapContent from '../components/MapContent';
+
 type IPageProps = {
   name: string;
   title: string;
@@ -12,10 +13,21 @@ type IPageProps = {
   content: IHeadingAndTitle[];
   menu: IMenuItem[];
   settings: ISiteSettings;
+  CustomCSS: CustomCSS;
+};
+
+type CustomCSS = {
+  css: {
+    code: string;
+    _type: string;
+  };
+  _type: string;
 };
 
 const IndexPage = (props: IPageProps) => {
-  const { content, menu, settings, name, description } = props;
+  const { content, menu, settings, name, description, CustomCSS } = props;
+
+  const customCSSString = String.raw`${CustomCSS.css.code}`;
 
   return (
     <>
@@ -23,7 +35,7 @@ const IndexPage = (props: IPageProps) => {
         <title>{name}</title>
         <meta name="description" content={description} />
       </Head>
-      <Header items={menu} settings={settings}/>
+      <Header items={menu} settings={settings} />
       <MapContent content={content} />
       <style jsx global>{`
         :root {
@@ -31,10 +43,12 @@ const IndexPage = (props: IPageProps) => {
           --text-color: ${settings.textColor.hex};
           --accent-color: ${settings.accentColor.hex};
         }
+        ${customCSSString}
       `}</style>
     </>
   );
 };
+
 
 export const getServerSideProps: GetServerSideProps<IPageProps> = async context => {
   context.res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=7200');
@@ -59,6 +73,7 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
     slug,
     menuOrder,
     title,
+    CustomCSS,
   } | order(menuOrder asc)`;
   const siteSettingsQuery = groq`
   *[_type == 'siteSettings'][0]
@@ -69,13 +84,14 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async context 
     client.fetch(siteSettingsQuery),
   ]);
 
-  const { name, title, description } = pageResponse;
+  const { name, title, description, CustomCSS } = pageResponse;
 
   return {
     props: {
       name,
       title,
       description,
+      CustomCSS,
       content: pageResponse.content,
       menu: menuResponse,
       settings: siteSettingsResponse,

@@ -19,6 +19,10 @@ const Page = {
       name: 'seo',
       title: 'Seo',
     },
+    {
+      name: 'css',
+      title: 'css',
+    }
   ],
   fields: [
     defineField({
@@ -61,11 +65,20 @@ const Page = {
       },
     }),
     defineField({
+      name: 'CustomCSS',
+      title: 'Css',
+      description: 'Add custom css to this page.',
+      type: 'Styling',
+      group: 'css',
+    }),
+
+    defineField({
       name: 'menuOrder',
       title: 'Menu order',
       description: 'Order in which this page is shown on menu. Leave empty if not wanted in menu.',
       type: 'number',
     }),
+
     defineField({
       name: 'content',
       title: 'Content',
@@ -73,8 +86,10 @@ const Page = {
       group: 'content',
       of: [
         { type: 'headingAndTitle' },
+        { type: 'bot'}
       ],
     }),
+    
   ],
   orderings: [
     {
