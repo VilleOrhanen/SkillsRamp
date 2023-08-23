@@ -35,7 +35,7 @@ const BotSection = (props: IBot) => {
               <main className="mt-28 max-w-3xl md:max-h-[85vh]">
                   <div>
                       <h1 className="text-4xl font-bold text-black">{heading}</h1>
-                      <Image {...image} className="mt-8 max-w-md mb-8" />
+                      <Image {...image} className="mt-8 max-w-sm lg:max-w-md mb-8" />
                       <p className="mt-4 text-lg leading-7 text-black-400">{description}</p>
                   </div> 
               </main>
