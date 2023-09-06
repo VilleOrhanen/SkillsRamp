@@ -2,6 +2,7 @@ import { IBot } from '_lib/types'
 import React from 'react'
 import Script from 'next/script'
 import Image from 'components/Image';
+import { PortableText } from "@portabletext/react";
 
 type IRhobotWebChatComponent = {
   'tenant-id': string;
@@ -26,7 +27,7 @@ declare global {
 }
 
 const BotSection = (props: IBot) => {
-  const { tenantId, instanceId, subscriptionKey, debug, autoScroll, heading, description, image } = props;
+  const { tenantId, instanceId, subscriptionKey, debug, autoScroll, heading, content, image } = props;
 
   return (
     <div className="mx-auto min-h-screen py-2">
@@ -36,7 +37,12 @@ const BotSection = (props: IBot) => {
           <div>
             <Image {...image} className="mt-8 max-w-sm lg:max-w-md mb-8" />
             <h1 className="text-2xl font-bold text-black">{heading}</h1>
-            <p className="mt-4 text-lg leading-7 text-black-400">{description}</p>
+            <div className="mt-4"> 
+            <PortableText 
+        value={content} 
+      />
+      </div>
+            
           </div>
         </main>
         {/* aside content */}

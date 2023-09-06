@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "sanity";
+
 export type ISiteSettings = {
   accentColor: IColor;
   _id: string;
@@ -56,6 +58,6 @@ export type IBot = {
   debug: boolean;
   autoScroll: boolean;
   heading?: string;
-  description?: string;
+  content?: any;
   image: ISanityImage;
 };

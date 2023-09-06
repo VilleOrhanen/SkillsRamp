@@ -36,9 +36,14 @@ const bot = {
             type: 'string',
             }),
         defineField({
-            name: 'description',
-            title: 'Description',
-            type: 'string',
+            name: 'content',
+            title: 'Content',
+            type: 'array',
+            of: [
+                {
+                    type: 'block',
+                },
+            ],
             }),
         defineField({
             name: 'image',
