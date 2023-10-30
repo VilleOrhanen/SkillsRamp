@@ -6,17 +6,31 @@ import { CSSProperties } from "react"
 const ReportSection = ({reportUrl, companyName, logo}) => {
     const iframeStyle: CSSProperties = {
         width: "100vw",
-        height: "98vh",
-        border: "none"
+        height: "calc(99vh - 65px)",
+    }
+    const logoStyle: CSSProperties = {
+        width: "100%",
+        height: "65px",
+        boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+        zIndex: 100,
+        display: "flex",
+        justifyContent: "center",
+    }
+
+    const logoSize = {
+        width: "130px",
+        height: "100px"
     }
 
     return (
         <div>
-            <div className="lg: absolute">
-                <Image {...logo} alt={companyName} className="object-cover px-4 py-2 w-44" />
+            <div style={logoStyle}>
+                <div style={logoSize}>
+                    <Image {...logo} alt={companyName} className="py-2 h- object-contain"/>   
+                </div>
             </div>
             <div className="mx-auto py-2">
-                <iframe title="Tietotili Data" style={iframeStyle} src={reportUrl} frameBorder={0} allowFullScreen={true}></iframe>
+                <iframe className="h-5/6" title="Tietotili Data" style={iframeStyle} src={reportUrl} frameBorder={0} allowFullScreen={true}></iframe>
             </div>
         </div>
     )
