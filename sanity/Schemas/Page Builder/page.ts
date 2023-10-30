@@ -22,7 +22,7 @@ const Page = {
     {
       name: 'css',
       title: 'css',
-    },
+    }
   ],
   fields: [
     defineField({
@@ -39,7 +39,9 @@ const Page = {
       type: 'string',
       group: 'seo',
       description: 'What shows up as the link text in search engine',
-      validation: Rule => [Rule => Rule.required().error('Title is required.')],
+      validation: Rule => [
+        Rule => Rule.required().error('Title is required.'),
+      ],
     },
     {
       name: 'description',
@@ -47,7 +49,9 @@ const Page = {
       type: 'string',
       group: 'seo',
       description: 'Describe the page for search engines.',
-      validation: Rule => [Rule => Rule.required().error('Title is required.')],
+      validation: Rule => [
+        Rule => Rule.required().error('Title is required.'),
+      ],
     },
     defineField({
       name: 'slug',
@@ -80,8 +84,13 @@ const Page = {
       title: 'Content',
       type: 'array',
       group: 'content',
-      of: [{ type: 'headingAndTitle' }, { type: 'bot' }, { type: 'report' }],
+      of: [
+        { type: 'headingAndTitle' },
+        { type: 'bot'},
+        { type: 'report'}
+      ],
     }),
+    
   ],
   orderings: [
     {

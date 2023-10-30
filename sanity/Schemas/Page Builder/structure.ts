@@ -4,5 +4,7 @@ export const builderStructure = (S: any) =>
     .child(
       S.list()
         .title('Page Builder')
-        .items([S.listItem().title('Pages').child(S.documentList().title('Pages').filter('_type == "page"'))])
+        .items([
+          S.listItem().title('Pages').child(S.documentList().title('Pages').filter('_type == "page"')),
+        ])
     );

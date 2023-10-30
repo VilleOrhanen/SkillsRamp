@@ -14,6 +14,7 @@ export default defineConfig({
   projectId,
   dataset,
   schema,
-  plugins: [deskTool({ structure }), colorInput(), visionTool({ defaultApiVersion: apiVersion }), media(), codeInput()],
+  plugins: [deskTool({ structure }), colorInput(), visionTool({ defaultApiVersion: apiVersion }), media(), codeInput()
+],
   theme: myTheme,
 });
