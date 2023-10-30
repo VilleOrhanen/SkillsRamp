@@ -1,4 +1,5 @@
 import Image from "components/Image"
+import { url } from "inspector"
 import { CSSProperties } from "react"
 
 
@@ -21,11 +22,14 @@ const ReportSection = ({reportUrl, companyName, logo}) => {
         width: "130px",
         height: "100px"
     }
+    const onClick = () => {
+        window.location.reload()
+    }
 
     return (
         <div>
             <div style={logoStyle}>
-                <div style={logoSize}>
+                <div style={logoSize} onClick={onClick}>
                     <Image {...logo} alt={companyName} className="py-2 h- object-contain"/>   
                 </div>
             </div>
