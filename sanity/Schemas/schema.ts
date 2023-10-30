@@ -6,7 +6,6 @@ import bot from './types/bot';
 import styling from './types/styling';
 import report from './types/report';
 
-
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     //Documents
@@ -23,7 +22,5 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     report,
 
     styling,
-
   ],
-
 };

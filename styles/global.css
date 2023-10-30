@@ -6,12 +6,11 @@
 
 @layer base {
   body {
-    @apply bg-bg text-text font-extralight;
+    @apply bg-bg font-extralight text-text;
     font-family: 'Open Sans', sans-serif;
   }
 }
 @layer components {
-
   .nav {
     z-index: 2;
   }
@@ -202,7 +201,7 @@ em {
 /* Breaks */
 br {
   display: block;
-  content: "";
+  content: '';
   margin-top: 1em;
 }
 

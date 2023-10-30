@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { groq } from 'next-sanity';
+
 import { client } from '../_lib/client';
 import { IHeadingAndTitle, ISiteSettings } from '../_lib/types';
 import Header, { IMenuItem } from '../components/header/Header';
@@ -48,7 +49,6 @@ const IndexPage = (props: IPageProps) => {
     </>
   );
 };
-
 
 export const getServerSideProps: GetServerSideProps<IPageProps> = async context => {
   context.res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=7200');
