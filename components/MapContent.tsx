@@ -30,7 +30,7 @@ const MapContent = ({ content }: IMapContentProps) => {
               }
             }} key={item._key} {...item} />
             case 'report':
-              return <ReportSection key={item._key} {...item} />
+              return <ReportSection reportUrl={undefined} companyName={undefined} logo={undefined} key={item._key} {...item} />
           default:
             break;
         }
