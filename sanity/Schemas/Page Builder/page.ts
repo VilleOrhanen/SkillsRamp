@@ -86,8 +86,7 @@ const Page = {
       group: 'content',
       of: [
         { type: 'headingAndTitle' },
-        { type: 'bot'},
-        { type: 'report'}
+        { type: 'bot'}
       ],
     }),
     

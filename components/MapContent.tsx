@@ -1,7 +1,6 @@
 import {IHeadingAndTitle} from '../_lib/types';
 import BotSection from './botSection/BotSection';
 import HeadingAndTitle from './headingandTitle/HeadingAndTitle';
-import ReportSection from './reportSection/ReportSection';
 
 
 type IMapContentProps = {
@@ -29,20 +28,6 @@ const MapContent = ({ content }: IMapContentProps) => {
                 _type: ''
               }
             }} key={item._key} {...item} />
-          case 'report':
-            return <ReportSection reportUrl={''} logo={{
-              _key: '',
-              _id: '',
-              url: undefined,
-              _type: '',
-              asset: {
-                url: function (url: any): unknown {
-                  throw new Error('Function not implemented.');
-                },
-                _ref: '',
-                _type: ''
-              }
-            }} companyName={''} key={item._key} {...item} />
           default:
             break;
         }
