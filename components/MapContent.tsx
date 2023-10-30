@@ -1,6 +1,7 @@
 import {IHeadingAndTitle} from '../_lib/types';
 import BotSection from './botSection/BotSection';
 import HeadingAndTitle from './headingandTitle/HeadingAndTitle';
+import ReportSection from './reportSection/ReportSection';
 
 
 type IMapContentProps = {
@@ -28,6 +29,8 @@ const MapContent = ({ content }: IMapContentProps) => {
                 _type: ''
               }
             }} key={item._key} {...item} />
+            case 'report':
+              return <ReportSection key={item._key} {...item} />
           default:
             break;
         }

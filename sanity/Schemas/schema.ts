@@ -4,6 +4,7 @@ import siteSettings from './Site Settings/siteSettings';
 import headingAndTitle from './types/headingAndTitle';
 import bot from './types/bot';
 import styling from './types/styling';
+import report from './types/report';
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -17,6 +18,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
     //Objects
     bot,
+
+    //Objects
+    report,
 
     styling,
 

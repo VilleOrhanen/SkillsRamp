@@ -61,3 +61,12 @@ export type IBot = {
   content?: any;
   image: ISanityImage;
 };
+
+export type IReport = {
+  _ref?: string;
+  _type?: string;
+  _key?: string;
+  reportUrl: string;
+  logo: ISanityImage;
+  companyName: string;
+};
